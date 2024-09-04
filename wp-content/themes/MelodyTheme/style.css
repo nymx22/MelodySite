@@ -1,0 +1,122 @@
+/*
+Theme Name: MelodyTheme
+Theme URI: http://example.com/MelodyTheme
+Author: Ming
+Author URI: http://example.com
+Description: Melody's Web theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: MelodyTheme
+
+*/
+html, body {
+    height: 100vh;  
+    margin: 0;      
+    padding: 0;     
+    overflow: hidden;  
+}
+.page_box {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+    height: 100%;  
+    width: 100vw;  
+}
+
+header {
+    flex: 0 0 auto;  /* This ensures that the header size is based on its content and doesn't grow or shrink */
+
+    background: #ffffff;
+    padding: 10px 20px;
+    text-align: start;
+    width: 100%; /* Ensures the header extends full width */
+    position: fixed; /* Fixes the header at the top of the viewport */
+    top: 0; /* Aligns the header at the top */
+    left: 0; /* Aligns the header to the left */
+    z-index: 1000; /* Higher z-index to ensure it stays on top of other content */
+}
+
+#left-sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 25%; 
+    flex-shrink: 0; /* Prevents the sidebar from shrinking */
+
+    flex: 0 0 250px;    /* Sidebar takes no more than 250px width and does not grow or shrink */
+}
+
+.image-slider {
+    position: relative;
+    width: fit-content;
+    margin: auto;  /* Centers the image slider */
+}
+
+.nav-icon {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Keeps the arrow centered vertically */
+    z-index: 10; /* Ensure they are above the image */
+    color: #000; /* Make arrows black or choose a contrasting color */
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+.nav-icon.left, .nav-icon.right {
+    position: absolute;
+    top: 50%;  /* Keeps vertically centered*/
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.nav-icon.left {
+    left: calc(10% - 30px);  /* 10% of the `image_box` width minus the arrow's width*/
+}
+
+.nav-icon.right {
+    right: calc(10% - 30px);
+}
+
+
+
+.image_box {
+    position: relative;  
+    flex-grow: 1;       /* Allows the image container to grow and fill the remaining space */
+    display: flex;      /* Makes the image container itself a flex container */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /*        /* Adjust this value to control the image size */
+    height: 20vw;  
+    width: 80vw;  
+
+    
+}
+
+
+.centered-resize {
+    display: block;       /* Makes the image a block element to allow margin auto to work */
+    margin: auto;         /* Centers the image horizontally and vertically within its container */
+    max-width: 50%;      /* Ensures the image is responsive and doesn't overflow its container width-wise */
+    max-height: 30vw;    /* Ensures the image does not exceed 70% of the viewport height */
+    height: auto;         /* Maintains the aspect ratio of the image */
+    width: auto;          /* Ensures width also adjusts to maintain aspect ratio */
+}
+
+#content_box {
+    display: flex; 
+    flex-direction: row;  /* Maintains a row-based flex container */
+    align-items: center;  /* Centers children vertically within the container */
+    justify-content: center; /* Centers children horizontally within the container */
+    gap: 20px;   
+    width: 100%;  /* Takes the full width of its container */
+}
+
+
+footer {
+    background: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom of the viewport */
+}
+
+
