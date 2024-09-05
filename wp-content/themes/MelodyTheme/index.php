@@ -29,19 +29,15 @@ if (!empty($image_urls) && !empty($image_alts)):
     <!-- Further HTML and JS -->
 <?php endif; ?>
 
-
-
 <body>
 <div id="page_box">
     <?php get_header(); ?>
     <div id="content_box"> <!-- This div will act as the flex container -->
     <?php get_sidebar('left'); // This includes the sidebar-left.php you created ?>
-
             <div class="image-slider">
             <div class="nav-icon left">&#10094;</div>
                     <div class="image_box">
                         <img src="<?php echo esc_url($image_urls[0]); ?>" alt="<?php echo esc_attr($image_alts[0]); ?>" id="slider-image" class="centered-resize">
-
                 </div>
             <div class="nav-icon right">&#10095;</div>  <!-- Right arrow -->
         </div>

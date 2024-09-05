@@ -16,10 +16,10 @@ function custom_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'custom_enqueue_scripts');
 
-// function enqueue_custom_scripts() {
-//     wp_enqueue_script('dynamic-arrow-positioning', get_template_directory_uri() . '/js/arrow_dynamic.js', array(), null, true);
-// }
-// add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+function enqueue_arrow_scripts() {
+    wp_enqueue_script('dynamic-arrow-positioning', get_template_directory_uri() . '/js/arrow_dynamic.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_arrow_scripts');
 
 function enqueue_slider_script() {
     wp_enqueue_script('image-slider', get_template_directory_uri() . '/js/image_slider.js', array(), null, true);
