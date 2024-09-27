@@ -6,11 +6,11 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 ?>
 <aside id="left-sidebar" class="widget-area">
     <ul>
-
+    <li><a href="http://example.com/Home">Home</a></li>
         <li><a href="http://example.com/always-aching-sometimes-mending">Always Aching, Sometimes Mending</a></li>
         <li><a href="http://example.com/nightmares">Nightmares</a></li>
         <div class="spacer"></div> <!-- Spacer element -->
-        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About Us</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
         <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
         <!-- Add the Instagram link here -->
         <li><a href="https://www.instagram.com/melo.imaging/" target="_blank">Instagram</a></li>

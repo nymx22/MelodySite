@@ -12,43 +12,63 @@ Text Domain: MelodyTheme
 */
 html, body {
 
-    margin: 0;      
+    height: 100vh; /* Sets the full height of the viewport */
+    width: 100vw; /* Sets the full width of the viewport */
+    margin: 0;     
     padding: 0;     
-    overflow: hidden;  
-    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
+    /* background: skyblue;
+    box-sizing: border-box;
+    border: 5px dotted chocolate; */
+    flex-direction: row;  
+
+
 }
 
 .page_box {
-    display: flex;
-    flex-direction: column;  
-    justify-content: center;
-    align-items: center;
+    /* border: 5px solid orangered;
+    background: gold;
+    box-sizing: border-box; */
+    position: relative;
 
+    display: flex;
+    flex-direction: row;  
+    justify-content: center; /* Centers children vertically */
+    align-items: center; /* Centers children horizontally */
+    height: 100vh;
+    width: 100vw;
 }
 
 header {
-    flex: 0 0 auto;  /* This ensures that the header size is based on its content and doesn't grow or shrink */
-    background: #bbbbbb;
-    padding: 1.1% 25%;
+    /* box-sizing: border-box;
+    border: 5px dotted black;
+    background: wheat; */
+    padding: 1.1% 0% 0.3% 5%;
     text-align: left;
-    width: 100%; /* Ensures the header extends full width */
+    width: 80%; /* Ensures the header extends full width */
     position: fixed; /* Fixes the header at the top of the viewport */
     top: 0; /* Aligns the header at the top */
-    left: 0; /* Aligns the header to the left */
+    left: 15%; /* Aligns the header to the left */
     z-index: 100; /* Higher z-index to ensure it stays on top of other content */
 }
 
+header h1 {
+    font-size: 1.4rem; /* This is scalable and relative to the root font size */
+}
+
 #left-sidebar {
-    background-color: #aacccc;
-    padding: 10% 5% 5%;
-    max-width: 25%; 
-    flex-shrink: 1; /* Prevents the sidebar from shrinking */
-    font-size: 1.25rem;
+    /* box-sizing: border-box;
+    border: 5px dashed white;
+    background-color: yellowgreen; */
+
+    position: absolute;
+
+    margin: 0.8% 0.8% 1.2% 1.2%;
+    top: 0;
+    height: 100vh;
+    max-width: 13%; 
+    font-size: 1.50rem;
     z-index: 10; /* Higher z-index to ensure it stays on top of other content */
-
-
-
-    flex: 0 0 250px;    /* Sidebar takes no more than 250px width and does not grow or shrink */
 }
 
 @media (max-width: 768px) {
@@ -58,11 +78,12 @@ header {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-height: 500px) {
     #left-sidebar {
         display: none; /* Hides the sidebar */
     }
 }
+
 
 #left-sidebar ul {
     list-style-type: none; /* Removes bullet points */
@@ -74,107 +95,147 @@ header {
     display: block;  /* This ensures that the margin is applied properly */
     text-decoration: none;  /* Keeps underlines off */
     color: inherit;  /* Maintains the same color as other text */
-    font-size: 1.25rem;  /* Sets the size of the text */
+    font-size: 1.30rem;  /* Sets the size of the text */
     margin-bottom: 10%;  /* Adds 20px of space below each link */
     padding: 2% 2%;  /* Optional: adds padding inside the link for better clickability */
 }
 
-.spacer {
-    height: 40vh; /* Height of the spacer */
-    display: block; /* Ensures it's not display:none or visibility:hidden */
 
+
+.spacer {
+    height: 50vh; /* Height of the spacer */
+    display: block; /* Ensures it's not display:none or visibility:hidden */
     background-color: #ffffff; /* Background color of the spacer */
     width: 25%; /* Ensures it fills the container */
 }
 
-@media (max-height: 700px) {
-    .spacer {
+
+
+
+.nav-icon {
+    position: absolute; 
+    font-size: 30px; 
+    color: #fff; 
+    cursor: pointer;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: -.5px -.5px 0 #888, .5px -.5px 0 #888, -.5px .5px 0 #888, .5px .5px 0 #888; /* Simulates an outline */
+
+    opacity: 0.5; /* Hide by default */
+    transition: opacity 0.3s; /* Smooth transition for opacity change */
+}
+
+@media (max-width: 768px) {
+    .nav-icon.left {
+        left: 5%; /* Closer to the edge on smaller screens */
+    }
+    .nav-icon.right {
+        right: 5%; /* Closer to the edge on smaller screens */
+    }
+}
+
+/* Additional adjustments for even smaller screens */
+@media (max-width: 480px) {
+    .nav-icon.left {
+        left: 2%; /* Even closer to the edge on very small screens */
+    }
+    .nav-icon.right {
+        right: 2%; /* Even closer to the edge on very small screens */
+    }
+}
+
+
+
+
+#content_box {
+    top: 0; /* Aligns the header at the top */
+    bottom: 0; /* Aligns the header at the top */
+    left: 0; /* Aligns the header at the top */
+    right: 0; /* Aligns the header at the top */
+/* 
+    background: honeydew;
+    border: 5px solid lightcoral;
+    box-sizing: border-box; */
+
+    position: fixed;
+    flex-grow: 1;
+    display: flex; 
+    flex-direction: row;  /* Maintains a row-based flex container */
+    align-items: start;  /* Centers children vertically within the container */
+    justify-content: start; /* Centers children horizontally within the container */
+    width: 100%;  /* Takes the full width of its container */
+    height: 100%;  /* Takes the full width of its container */
+    max-width: 100%;
+
+
+}
+
+.image-slider {
+    /* border: 5px solid pink;
+    box-sizing: border-box;
+    top:0;
+    background: whitesmoke;     */
+    position: relative;
+    width: 100%; /* Takes full width of the parent container */
+    height: 100%; /* Takes full height of the parent container */
+    max-height: 90vh;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+
+
+}
+
+.image_box {
+    /* background: #bbbbcc;
+    border: 5px dotted rebeccapurple; */
+
+
+    position: relative;  
+    display: flex;      /* Makes the image container itself a flex container */
+    justify-content: center; /* Centers the image horizontally */
+    flex-grow: 1; /* Allows the image container to grow and fill the available space */
+    align-items: center; /*        /* Adjust this value to control the image size */
+    height: 100%;
+    max-width: 75%;
+    bottom: 5%;
+left: 7%;
+    max-height: 90vh;
+
+    
+
+}
+
+@media (max-width: 600px) {
+    .image_box {
         display: none; /* Hides the sidebar */
     }
 }
 
 
-.nav-icon {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Keeps the arrow centered vertically */
-    z-index: 10; /* Ensure they are above the image */
-    color: #000; /* Make arrows black or choose a contrasting color */
-    font-size: 24px; /* Adjust size as needed */
-    cursor: pointer;
-}
-
-.nav-icon.left, .nav-icon.right {
-    position: absolute;
-    top: 50%;  /* Keeps vertically centered*/
-    transform: translateY(-50%);
-    z-index: 20;
-}
-
-.nav-icon.left {
-    background: #ffffff;
-
-    left: -1vh;  /* 10% of the `image_box` width minus the arrow's width*/
-}
-
-.nav-icon.right {
-    background: #ffffff;
-
-    right: -1vh;
-}
-
-
-.image-slider {
-    background: #ffffff;    
-    width: 90%;  
-    max-width: 90%;      /* Ensures the image is responsive and doesn't overflow its container width-wise */
-
-
-    position: relative;
-    margin: auto;  /* Centers the image slider */
-}
-
-
-.image_box {
-    background: #bbbbcc;
-    position: relative;  
-    flex-grow: 1;       /* Allows the image container to grow and fill the remaining space */
-    display: flex;      /* Makes the image container itself a flex container */
-    justify-content: center; /* Centers the image horizontally */
-    align-items: center; /*        /* Adjust this value to control the image size */
-    height: 100vh;  
-    width: 100%;  
-
-    
-}
-
-
 .centered-resize {
-    background: #ddcccc;
+    /* border: 5px solid blanchedalmond;
+    background: papayawhip; */
     display: block;       /* Makes the image a block element to allow margin auto to work */
-    margin: auto;         /* Centers the image horizontally and vertically within its container */
     max-width: 50%;      /* Ensures the image is responsive and doesn't overflow its container width-wise */
-    max-height: 100%;    /* Ensures the image does not exceed 70% of the viewport height */
+    max-height: 60vh;    /* Ensures the image does not exceed 70% of the viewport height */
     height: auto;         /* Maintains the aspect ratio of the image */
     width: auto;          /* Ensures width also adjusts to maintain aspect ratio */
 }
 
-#content_box {
-    background: #ddcccc;
 
-    display: flex; 
-    flex-direction: row;  /* Maintains a row-based flex container */
-    align-items: center;  /* Centers children vertically within the container */
-    justify-content: center; /* Centers children horizontally within the container */
-    width: 100%;  /* Takes the full width of its container */
+
+@media (max-width: 600px) {
+    #content_box {
+        display: none; /* Hides the sidebar */
+    }
 }
 
-
 footer {
-    background: #ffffff;
-    padding: 10px 20px;
+    background: #000ccc;
     text-align: center;
-    margin-top: auto; /* Pushes the footer to the bottom of the viewport */
 }
 
 @font-face {
@@ -182,6 +243,13 @@ footer {
     src: url('fonts/Siro-Light.ttf') format('tff');
     font-weight: normal;
     font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Siro-ExtraLight';
+    src: url('fonts/Siro-ExtraLight.ttf') format('truetype');
+
 }
 
 body {
