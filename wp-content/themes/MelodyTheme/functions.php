@@ -26,3 +26,14 @@ function enqueue_slider_script() {
     wp_enqueue_script('image-slider', get_template_directory_uri() . '/js/image_slider.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_slider_script');
+
+
+function my_theme_enqueue_scripts() {
+    // Check if the new function exists and use it
+    if (function_exists('wp_enqueue_enqueue_template_skip_link')) {
+        wp_enqueue_block_template_skip_link();
+    }
+}
+
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
+// Right place to call it is usually in the functions.php or within a setup function hooked to 'wp_enqueue_scripts'

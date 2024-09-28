@@ -10,6 +10,96 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: MelodyTheme
 
 */
+
+
+
+/*HomePage*/
+
+#content_box_home {
+    top: 0; /* Aligns the header at the top */
+    bottom: 0; /* Aligns the header at the top */
+    left: 0; /* Aligns the header at the top */
+    right: 0; /* Aligns the header at the top */
+/* 
+    background: honeydew;
+    border: 5px solid lightcoral;
+    box-sizing: border-box; */
+
+    position: fixed;
+    flex-grow: 1;
+    display: flex; 
+    flex-direction: row;  /* Maintains a row-based flex container */
+    align-items: start;  /* Centers children vertically within the container */
+    justify-content: start; /* Centers children horizontally within the container */
+    width: 100%;  /* Takes the full width of its container */
+    height: 100%;  /* Takes the full width of its container */
+    max-width: 100%;
+
+
+}
+
+.image-slider_home {
+    /* border: 5px solid pink;
+    box-sizing: border-box;
+    top:0;
+    background: whitesmoke;     */
+    position: relative;
+    width: 100%; /* Takes full width of the parent container */
+    height: 100%; /* Takes full height of the parent container */
+    max-height: 100%;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+
+
+}
+
+.image_box_home {
+    /* background: #bbbbcc;
+    border: 5px dotted rebeccapurple; */
+
+
+    position: relative;  
+    display: flex;      /* Makes the image container itself a flex container */
+    justify-content: center; /* Centers the image horizontally */
+    flex-grow: 1; /* Allows the image container to grow and fill the available space */
+    align-items: center; /*        /* Adjust this value to control the image size */
+    height: 100%;
+    max-width: 75%;
+    bottom: 0%;
+left: 0%;
+    max-height: 90vh;
+
+    
+
+}
+
+@media (max-width: 600px) {
+    .image_box_home {
+        display: none; /* Hides the sidebar */
+    }
+}
+
+
+.centered-resize_home {
+    /* border: 5px solid blanchedalmond;
+    background: papayawhip; */
+    display: block;       /* Makes the image a block element to allow margin auto to work */
+    max-width: 100%;      /* Ensures the image is responsive and doesn't overflow its container width-wise */
+    max-height: 100%;    /* Ensures the image does not exceed 70% of the viewport height */
+    height: auto;         /* Maintains the aspect ratio of the image */
+    width: auto;          /* Ensures width also adjusts to maintain aspect ratio */
+}
+
+
+
+@media (max-width: 600px) {
+    #content_box_home {
+        display: none; /* Hides the sidebar */
+    }
+}
+
+/*IndexPage*/
 html, body {
 
     height: 100vh; /* Sets the full height of the viewport */
@@ -43,6 +133,7 @@ header {
     /* box-sizing: border-box;
     border: 5px dotted black;
     background: wheat; */
+    font-family: 'Siro-Regular', sans-serif;
     padding: 1.1% 0% 0.3% 5%;
     text-align: left;
     width: 80%; /* Ensures the header extends full width */
@@ -50,6 +141,7 @@ header {
     top: 0; /* Aligns the header at the top */
     left: 15%; /* Aligns the header to the left */
     z-index: 100; /* Higher z-index to ensure it stays on top of other content */
+
 }
 
 header h1 {
@@ -240,20 +332,24 @@ footer {
 
 @font-face {
     font-family: 'Siro-Light';
-    src: url('fonts/Siro-Light.ttf') format('tff');
+    src: url('fonts/Siro-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'Siro-ExtraLight';
-    src: url('fonts/Siro-ExtraLight.ttf') format('truetype');
+    font-family: 'Siro-Regular';
+    src: url('fonts/Siro-Regular.ttf') format('truetype');
 
 }
 
 body {
-    font-family: 'Siro-Light', sans-serif;
+    font-family: 'Siro-Regular', sans-serif;
 }
+
+
+
+
 
 
