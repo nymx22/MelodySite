@@ -1,6 +1,7 @@
 <?php
 // Add theme support for necessary features
 add_theme_support( 'automatic-feed-links' );
+add_filter('show_admin_bar', '__return_false');
 
 // Function to load stylesheets
 function main() {
