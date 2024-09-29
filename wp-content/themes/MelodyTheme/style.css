@@ -20,8 +20,8 @@ Text Domain: MelodyTheme
     bottom: 0; /* Aligns the header at the top */
     left: 0; /* Aligns the header at the top */
     right: 0; /* Aligns the header at the top */
-/* 
-    background: honeydew;
+
+    /* background: honeydew;
     border: 5px solid lightcoral;
     box-sizing: border-box; */
 
@@ -65,10 +65,10 @@ Text Domain: MelodyTheme
     flex-grow: 1; /* Allows the image container to grow and fill the available space */
     align-items: center; /*        /* Adjust this value to control the image size */
     height: 100%;
-    max-width: 75%;
+    max-width: 100%;
     bottom: 0%;
 left: 0%;
-    max-height: 90vh;
+    max-height: 100%;
 
     
 
