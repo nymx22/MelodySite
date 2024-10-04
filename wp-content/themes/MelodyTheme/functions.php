@@ -36,4 +36,13 @@ function my_theme_enqueue_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
+
+
+function enqueue_mobile_files() {
+    if (wp_is_mobile()) {
+        wp_enqueue_style('mobile-style', get_template_directory_uri() . '/mobile_style.css', array(), null, 'all');
+        wp_enqueue_script('mobile-script', get_template_directory_uri() . '/mobile.php', array(), null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_mobile_files');
 // Right place to call it is usually in the functions.php or within a setup function hooked to 'wp_enqueue_scripts'
