@@ -12,18 +12,12 @@
 <body <?php body_class(); ?>>
 
 <?php
-$image_ids = range(11, 43);
-$image_urls = array();
-$image_alts = array();
+$image_urls = [];
+$image_alts = [];
 
-foreach ($image_ids as $id) {
-    $url = wp_get_attachment_url($id);
-    $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
-
-    if ($url) { // Ensure the URL is valid
-        $image_urls[] = $url;
-        $image_alts[] = $alt ? $alt : "Default image description"; // Provide a default alt if none is found.
-    }
+for ($i = 1; $i <= 8; $i++) {
+    $image_urls[] = "http://localhost/mywordpress/wp-content/uploads/2024/11/index-" . $i . ".jpg";
+    $image_alts[] = "Default image description";
 }
 
 if (!empty($image_urls) && !empty($image_alts)):

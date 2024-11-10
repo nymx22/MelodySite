@@ -7,8 +7,8 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 <aside id="left-sidebar" class="widget-area">
     <ul>
     <li><a href="http://localhost/mywordpress/home/">Home</a></li>
-        <li><a href="http://example.com/always-aching-sometimes-mending">Always Aching, Sometimes Mending</a></li>
-        <li><a href="http://example.com/nightmares">Nightmares</a></li>
+        <li><a href="http://localhost/mywordpress/always-aching-sometimes-mending">Always Aching, Sometimes Mending</a></li>
+        <li><a href="http://localhost/mywordpress/nightmares">Nightmares</a></li>
         <div class="spacer"></div> <!-- Spacer element -->
         <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
         <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>

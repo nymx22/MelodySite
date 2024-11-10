@@ -1,0 +1,81 @@
+/* always aching, sometimes mending */
+
+body.project1 {
+    overflow: auto;
+}
+
+header {
+    /* box-sizing: border-box;
+    border: 5px dotted black;
+    background: wheat; */
+    font-family: 'Siro-Regular', sans-serif;
+    padding: 1.1% 0% 0.3% 5%;
+    text-align: left;
+    width: 80%; /* Ensures the header extends full width */
+    position: fixed; /* Fixes the header at the top of the viewport */
+    top: 0; /* Aligns the header at the top */
+    left: 15%; /* Aligns the header to the left */
+    z-index: 100; /* Higher z-index to ensure it stays on top of other content */
+
+}
+
+header h1 {
+    font-size: 1.4rem; /* This is scalable and relative to the root font size */
+}
+ 
+
+.vertical-image-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* New class for individual image boxes within the vertical layout */
+.vertical-image_box {
+    display: flex;
+    flex-direction: column;
+    align-items:s;
+    width: 100%;
+    position: relative; /* Allows absolute positioning within */
+}
+.image-fit {
+    width: 20px;
+    height: 60px;
+    margin-bottom: 20px;
+    position: relative; /* Default positioning */
+}
+.aligned-left {
+    position:relative;
+    left: 20%; /* Distance from left edge */
+    top: 0; /* Align to the top of the container */
+}
+.centered-image {
+    width: 60%; /* Centered images are smaller */
+}
+
+.vertical-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.vertical-image_box a {
+    display: inline-flex; /* Ensures the flex properties are maintained */
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Maintains width consistency */
+}
+
+.vertical-image_box a img {
+    width: 60%; /* or any specific width as per your design */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 20px; /* Consistent spacing */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.vertical-image_box a:hover img {
+    transform: scale(1.05); /* Slight scale on hover to indicate interactivity */
+}
