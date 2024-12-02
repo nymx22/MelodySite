@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: index
+*/
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -16,9 +22,10 @@ $image_urls = [];
 $image_alts = [];
 
 for ($i = 1; $i <= 8; $i++) {
-    $image_urls[] = "http://localhost/mywordpress/wp-content/uploads/2024/11/index-" . $i . ".jpg";
+    $image_urls[] = "http://tianyun-chen.com/wp-content/uploads/2024/11/index-" . $i . ".jpg";
     $image_alts[] = "Default image description";
 }
+$randomIndex = rand(0, 8); // Randomize index
 
 if (!empty($image_urls) && !empty($image_alts)):
 ?>
@@ -40,7 +47,7 @@ if (!empty($image_urls) && !empty($image_alts)):
         <div class="image-slider">
             <div class="image_box">
 
-                <img src="<?php echo esc_url($image_urls[0]); ?>" alt="<?php echo esc_attr($image_alts[0]); ?>" id="slider-image" class="centered-resize">
+                <img src="<?php echo esc_url($image_urls[$randomIndex]); ?>" alt="<?php echo esc_attr($randomIndex); ?>" id="slider-image" class="centered-resize">
 
             </div>
         </div>

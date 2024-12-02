@@ -51,9 +51,17 @@ function enqueue_custom_styles() {
         wp_enqueue_style('project1-style', get_template_directory_uri() . '/project1.css');
     } else if (is_page('nightmares')) {
         wp_enqueue_style('project2-style', get_template_directory_uri() . '/project2.css');
+    } else if (is_page('aasm-gallery')) {
+        wp_enqueue_style('project3-style', get_template_directory_uri() . '/project2.css');
     } else {
         wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
+
+function enqueue_header_p1() {
+    wp_enqueue_script('hide-on-scroll', get_template_directory_uri() . '/js/header_p1.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_header_p1');
 // Right place to call it is usually in the functions.php or within a setup function hooked to 'wp_enqueue_scripts'

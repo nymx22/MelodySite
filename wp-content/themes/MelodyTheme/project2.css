@@ -62,3 +62,21 @@ header h1 {
     width: 60%; /* Centered images are smaller */
 }
 
+
+.info-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative; /* This is needed to position the pseudo-element relative to the link */
+    display: inline-block; /* This makes the element only as wide as its content */
+}
+
+.info-link:after {
+    content: ''; /* Required for the pseudo-element to work */
+    display: block; /* Makes it a block element so it can have width and height */
+    width: 100%; /* Makes the line as wide as the text */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Color of the line */
+    margin-top: 5px; /* Spacing between the text and the line */
+}

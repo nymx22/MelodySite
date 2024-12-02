@@ -38,6 +38,8 @@ header h1 {
     flex-direction: column;
     align-items:s;
     width: 100%;
+    padding-top: 5%; /* Adjust as needed based on header height */
+
     position: relative; /* Allows absolute positioning within */
 }
 .image-fit {
@@ -69,13 +71,6 @@ header h1 {
     width: 100%; /* Maintains width consistency */
 }
 
-.vertical-image_box a img {
-    width: 60%; /* or any specific width as per your design */
-    height: auto; /* Maintains aspect ratio */
-    margin-bottom: 20px; /* Consistent spacing */
-    transition: transform 0.3s ease; /* Smooth transition for hover effects */
-}
 
-.vertical-image_box a:hover img {
-    transform: scale(1.05); /* Slight scale on hover to indicate interactivity */
-}
+
+

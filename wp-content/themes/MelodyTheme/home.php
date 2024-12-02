@@ -71,7 +71,7 @@ $image_alts = [];
 
 // Generating image URLs dynamically
 for ($i = 1; $i <= 10; $i++) {
-    $image_urls[] = "http://localhost/mywordpress/wp-content/uploads/2024/09/Home-" . $i . ".jpg";
+    $image_urls[] = "http://tianyun-chen.com/wp-content/uploads/2024/11/home-" . $i . ".jpg";
     $image_alts[] = "Default image description"; // Default alt text, adjust as needed
 }
 
