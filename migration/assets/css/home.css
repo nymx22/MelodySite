@@ -1,0 +1,61 @@
+/* Home page layout (migrated from MelodyTheme/style.css HomePage section) */
+
+#content_box_home {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.image-slider_home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_box_home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+  bottom: 0%;
+  left: 0%;
+  max-height: 100%;
+}
+
+@media (max-width: 600px) {
+  .image_box_home {
+    display: none;
+  }
+}
+
+.centered-resize_home {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  #content_box_home {
+    display: none;
+  }
+}
+
