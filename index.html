@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Work</title>
+
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <script>
+      // Image data (migrated from wp-content/themes/MelodyTheme/index.php)
+      window.imageUrls = Array.from({ length: 8 }, (_, i) => {
+        const n = i + 1;
+        return `./assets/images/2024/11/index-${n}.jpg`;
+      });
+      window.imageAlts = window.imageUrls.map(() => "Default image description");
+      window.currentIndex = Math.floor(Math.random() * window.imageUrls.length);
+    </script>
+
+    <script src="./assets/js/content_dynamic.js" defer></script>
+    <script src="./assets/js/arrow_dynamic.js" defer></script>
+    <script src="./assets/js/image_slider.js" defer></script>
+    <script src="./assets/js/image_zoom.js" defer></script>
+  </head>
+
+  <body>
+    <div id="page_box" class="page_box">
+      <header>
+        <h1>TianYun Chen</h1>
+      </header>
+
+      <div class="nav-icon left">&#10094;</div>
+
+      <div id="content_box">
+        <aside id="left-sidebar" class="widget-area">
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./always-aching-sometimes-mending.html">Always Aching, Sometimes Mending</a></li>
+            <li><a href="./nightmares.html">Nightmares</a></li>
+            <div class="spacer"></div>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="https://www.instagram.com/melo.imaging/" target="_blank" rel="noreferrer">Instagram</a></li>
+          </ul>
+        </aside>
+
+        <div class="image-slider">
+          <div class="image_box">
+            <img id="slider-image" class="centered-resize" alt="Artwork" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-icon right">&#10095;</div>
+    </div>
+  </body>
+</html>
