@@ -113,7 +113,7 @@ header h1 {
   z-index: 10;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #left-sidebar {
     flex-shrink: 1;
     flex-basis: 10%;
@@ -163,7 +163,7 @@ header h1 {
   transition: opacity 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nav-icon.left {
     left: 5%;
   }
@@ -220,7 +220,7 @@ header h1 {
   max-height: 90vh;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .image_box {
     display: none;
   }
@@ -234,7 +234,7 @@ header h1 {
   width: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   #content_box {
     display: none;
   }

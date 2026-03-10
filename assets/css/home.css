@@ -39,7 +39,7 @@
   max-height: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .image_box_home {
     display: none;
   }
@@ -53,7 +53,7 @@
   width: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   #content_box_home {
     display: none;
   }

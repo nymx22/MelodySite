@@ -6,6 +6,47 @@
     <title>Work</title>
 
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <style>
+      body.index-page { overflow: auto; }
+      .projects-section {
+        padding: 48px 5% 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .projects-section h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 24px;
+        padding-left: 15%;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .project-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+      .project-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+      }
+      .project-card span {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 768px) {
+        .projects-section { padding: 32px 5% 80px; }
+        .projects-section h2 { padding-left: 0; }
+        .projects-grid { grid-template-columns: 1fr; }
+      }
+    </style>
 
     <script>
       // Image data (migrated from wp-content/themes/MelodyTheme/index.php)
@@ -18,27 +59,47 @@
     </script>
 
     <script src="./assets/js/content_dynamic.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var btn = document.querySelector(".mobile-menu-btn");
+        var sidebar = document.getElementById("left-sidebar");
+        var backdrop = document.querySelector(".mobile-menu-backdrop");
+        function closeMenu() {
+          document.body.classList.remove("menu-open");
+        }
+        function toggleMenu() {
+          document.body.classList.toggle("menu-open");
+        }
+        if (btn) btn.addEventListener("click", toggleMenu);
+        if (backdrop) backdrop.addEventListener("click", closeMenu);
+        document.querySelectorAll("#left-sidebar a").forEach(function(a) {
+          a.addEventListener("click", closeMenu);
+        });
+      });
+    </script>
     <script src="./assets/js/arrow_dynamic.js" defer></script>
     <script src="./assets/js/image_slider.js" defer></script>
     <script src="./assets/js/image_zoom.js" defer></script>
   </head>
 
-  <body>
+  <body class="index-page">
     <div id="page_box" class="page_box">
       <header>
         <h1>TianYun Chen</h1>
+        <button class="mobile-menu-btn" aria-label="Open menu" type="button">☰</button>
       </header>
 
       <div class="nav-icon left">&#10094;</div>
 
       <div id="content_box">
+        <div class="mobile-menu-backdrop" aria-hidden="true"></div>
         <aside id="left-sidebar" class="widget-area">
           <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./always-aching-sometimes-mending.html">Always Aching, Sometimes Mending</a></li>
-            <li><a href="./nightmares.html">Nightmares</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/always-aching-sometimes-mending">Always Aching, Sometimes Mending</a></li>
+            <li><a href="/nightmares">Nightmares</a></li>
             <div class="spacer"></div>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="https://www.instagram.com/melo.imaging/" target="_blank" rel="noreferrer">Instagram</a></li>
           </ul>
         </aside>
@@ -52,5 +113,23 @@
 
       <div class="nav-icon right">&#10095;</div>
     </div>
+
+    <section class="projects-section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <a href="/always-aching-sometimes-mending" class="project-card">
+          <img src="./assets/images/2024/11/aasm-1.jpg" alt="Always aching, sometimes mending" />
+          <span>Always Aching, Sometimes Mending (2023)</span>
+        </a>
+        <a href="/nightmares" class="project-card">
+          <img src="./assets/images/2024/11/nightmares-1.jpg" alt="Nightmares" />
+          <span>Nightmares (2024)</span>
+        </a>
+        <a href="/aasm-gallery" class="project-card">
+          <img src="./assets/images/2024/11/nightmares-16.jpg" alt="Emerson Practicum Gallery" />
+          <span>Emerson Practicum Gallery (2024)</span>
+        </a>
+      </div>
+    </section>
   </body>
 </html>
