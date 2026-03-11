@@ -44,15 +44,14 @@
     font-size: clamp(0.75rem, 3vw, 0.875rem) !important;
   }
 
-  /* Project pages (AASM, Nightmares): scale up content to reduce side white space */
+  /* Project pages (AASM, Nightmares): equal left and right margin for images */
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box {
-    width: 112%;
-    max-width: none;
-    margin-left: -6%;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     overflow-x: hidden;
   }
 
@@ -79,14 +78,18 @@
     max-width: 100% !important;
     width: 100% !important;
   }
+  body.project1 #custom-header-widget,
+  body.project2 #custom-header-widget {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box {
-    width: 112%;
-    max-width: none;
-    margin-left: -6%;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     overflow-x: hidden;
   }
   body.project1 .vertical-image_box img,
@@ -276,18 +279,18 @@
     box-sizing: border-box;
   }
 
-  /* Project page headers - no side padding, shrink margins */
+  /* Project page headers - equal left and right margin */
   body.project1 #custom-header-widget,
   body.project2 #custom-header-widget {
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   body.project1 #custom-header-widget > div,
   body.project2 #custom-header-widget > div {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   #custom-header-widget {
     padding-left: 5% !important;
