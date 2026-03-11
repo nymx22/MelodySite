@@ -44,15 +44,20 @@
     font-size: clamp(0.75rem, 3vw, 0.875rem) !important;
   }
 
-  /* Project pages (AASM, Nightmares): constrain width, minimal equal side margin */
+  /* Project pages (AASM, Nightmares): no side padding, shrink margins */
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 0;
+    padding-right: 0;
     overflow-x: hidden;
+  }
+
+  body.project1 .vertical-image_box img,
+  body.project2 .vertical-image_box img {
+    margin-bottom: 4% !important;
   }
 
   /* Override image position offsets that cause horizontal overflow */
@@ -251,18 +256,18 @@
     box-sizing: border-box;
   }
 
-  /* Project page headers - constrain width, equal side padding */
+  /* Project page headers - no side padding */
   body.project1 #custom-header-widget,
   body.project2 #custom-header-widget {
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   body.project1 #custom-header-widget > div,
   body.project2 #custom-header-widget > div {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   #custom-header-widget {
     padding-left: 5% !important;
