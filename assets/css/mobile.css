@@ -20,9 +20,19 @@
     overflow-x: hidden !important;
     max-width: 100% !important;
     width: 100% !important;
+    padding-left: clamp(0px, 3vw, 18px) !important;
+    padding-right: clamp(12px, 4vw, 24px) !important;
+    box-sizing: border-box;
   }
   body {
     overflow-y: auto;
+  }
+
+  /* Project image area outer margins (header gets its own padding below) */
+  body.project1 .vertical-image_box,
+  body.project2 .vertical-image_box {
+    padding-left: clamp(0px, 3vw, 18px) !important;
+    padding-right: clamp(12px, 4vw, 24px) !important;
   }
 
   /* Scale fonts */
@@ -44,14 +54,12 @@
     font-size: clamp(0.75rem, 3vw, 0.875rem) !important;
   }
 
-  /* Project pages (AASM, Nightmares): equal left and right margin for images */
+  /* Project pages (AASM, Nightmares): padding set above with header */
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
     overflow-x: hidden;
   }
 
@@ -77,19 +85,25 @@
     overflow-x: hidden !important;
     max-width: 100% !important;
     width: 100% !important;
+    padding-left: clamp(0px, 0vw, 18px);
+    padding-right: clamp(12px, 4vw, 24px);
+    box-sizing: border-box;
   }
   body.project1 #custom-header-widget,
   body.project2 #custom-header-widget {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: clamp(0px, 0vw, 16px) clamp(12px, 4vw, 24px) clamp(8px, 2.5vw, 16px) clamp(8px, 3vw, 18px) !important;
+  }
+  body.project1 #custom-header-widget a[href="/home"],
+  body.project2 #custom-header-widget a[href="/home"] {
+    font-size: clamp(1rem, 4.5vw, 1.2rem) !important;
   }
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
     overflow-x: hidden;
   }
   body.project1 .vertical-image_box img,
@@ -279,13 +293,12 @@
     box-sizing: border-box;
   }
 
-  /* Project page headers - equal left and right margin */
+  /* Project page headers - vertical + horizontal padding */
   body.project1 #custom-header-widget,
   body.project2 #custom-header-widget {
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: clamp(0px, 2.5vw, 16px) clamp(12px, 4vw, 24px) clamp(8px, 2.5vw, 16px) clamp(8px, 3vw, 18px) !important;
   }
   body.project1 #custom-header-widget > div,
   body.project2 #custom-header-widget > div {
@@ -297,6 +310,11 @@
     padding-right: 5% !important;
   }
 
+  /* Project header "TianYun Chen" - match index header h1 */
+  body.project1 #custom-header-widget a[href="/home"],
+  body.project2 #custom-header-widget a[href="/home"] {
+    font-size: clamp(1rem, 4.5vw, 1.2rem) !important;
+  }
   #custom-header-widget a[href="/home"],
   #custom-header-widget a[href="/"] {
     font-size: clamp(0.95rem, 4vw, 1.2rem) !important;
