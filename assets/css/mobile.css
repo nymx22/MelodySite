@@ -71,6 +71,37 @@
   }
 }
 
+/* Project pages: extend mobile layout to 991px (landscape phones, small tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  body.project1,
+  body.project2 {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  body.project1 .vertical-image_box,
+  body.project2 .vertical-image_box {
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+  body.project1 .vertical-image_box img,
+  body.project2 .vertical-image_box img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+  body.project1 > *,
+  body.project2 > * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* Home page: nav bar and hero on mobile */
 @media (max-width: 767px) {
   .nav-bar {
