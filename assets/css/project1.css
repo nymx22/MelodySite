@@ -38,7 +38,7 @@ header h1 {
 .vertical-image_box {
     display: flex;
     flex-direction: column;
-    align-items:s;
+    align-items: center;
     width: 100%;
     padding-top: 5%; /* Adjust as needed based on header height */
 

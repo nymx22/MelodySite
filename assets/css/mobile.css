@@ -21,12 +21,6 @@
   .nav-bar a {
     font-size: clamp(0.8rem, 3.5vw, 0.95rem);
   }
-  .projects-section h2 {
-    font-size: clamp(1rem, 4vw, 1.2rem);
-  }
-  .project-card span {
-    font-size: clamp(0.85rem, 3vw, 0.95rem);
-  }
   main h2,
   main p,
   main a {
@@ -39,27 +33,11 @@
     font-size: clamp(0.75rem, 3vw, 0.875rem) !important;
   }
 
-  /* Scale images to fit */
-  .project-card img {
-    width: 100%;
-    height: auto;
-    min-height: min(160px, 50vw);
-    max-height: 45vh;
-    object-fit: cover;
-  }
+  /* Scale images to fit - max-width prevents overflow, preserve layout percentages */
   .vertical-image_box img {
     max-width: 100% !important;
-    width: auto !important;
     height: auto !important;
     object-fit: contain;
-  }
-  .projects-section {
-    padding: clamp(24px, 6vw, 32px) clamp(16px, 4vw, 24px) clamp(48px, 12vw, 80px);
-  }
-  .projects-section,
-  .projects-grid {
-    max-width: 100%;
-    overflow-x: hidden;
   }
 }
 
@@ -76,7 +54,7 @@
     padding: clamp(8px, 2.5vw, 14px) clamp(10px, 3.5vw, 14px);
   }
 
-  /* Home: hero image fills viewport below nav */
+  /* Home: hero image fills full viewport height (nav overlays) */
   body.home-page {
     padding-top: 0;
     overflow: hidden;
@@ -84,11 +62,13 @@
   body.home-page #home-hero {
     display: block;
     position: fixed;
-    top: clamp(40px, 12vw, 48px);
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - clamp(40px, 12vw, 48px));
+    height: 100vh;
+    min-height: 100%;
     object-fit: cover;
+    object-position: center;
   }
   body.home-page #page_box_home {
     display: none;
@@ -159,46 +139,59 @@
     display: block;
   }
 
-  #left-sidebar {
+  /* Index mobile: sidebar hidden by default, full-screen when menu open */
+  body.index-page #left-sidebar {
+    display: none;
     position: fixed;
-    top: 0;
+    top: clamp(56px, 16vw, 72px);
+    left: 0;
     right: 0;
-    bottom: 0;
-    left: auto;
-    width: min(260px, 85vw);
-    height: 100%;
-    max-width: 85vw;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: calc(100vh - clamp(56px, 16vw, 72px));
     background: rgba(0, 0, 0, 0.95);
     z-index: 551;
-    padding: clamp(48px, 15vw, 60px) clamp(16px, 5vw, 24px) clamp(16px, 5vw, 24px);
-    transform: translateX(100%);
-    transition: transform 0.25s ease;
+    padding: clamp(24px, 6vw, 48px) clamp(24px, 8vw, 48px);
     overflow-y: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
   }
 
-  body.menu-open #left-sidebar {
-    transform: translateX(0);
+  body.index-page.menu-open #left-sidebar {
+    display: flex;
   }
 
-  #left-sidebar ul {
+  body.index-page #left-sidebar ul {
     display: flex;
     flex-direction: column;
     gap: 0;
     padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
   }
 
-  #left-sidebar ul li a {
+  body.index-page #left-sidebar ul li {
+    width: 100%;
+  }
+
+  body.index-page #left-sidebar ul li a {
     color: #fff;
     margin-bottom: 0;
-    font-size: clamp(0.9rem, 4vw, 1.05rem);
-    padding: 12px 0;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    padding: clamp(14px, 4vw, 20px) 0;
     display: block;
+    width: 100%;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
+    box-sizing: border-box;
   }
 
-  .spacer {
+  body.index-page .spacer {
     display: block;
-    height: 24px;
+    height: clamp(24px, 6vw, 40px);
     background: transparent;
   }
 
@@ -233,7 +226,7 @@
     font-size: clamp(0.95rem, 4vw, 1.2rem) !important;
   }
 
-  /* About / Contact pages: center content */
+  /* About / Contact pages: center content, full-width layout */
   body:not(.home-page):not(.index-page) header {
     left: 0;
     width: 100%;
@@ -242,6 +235,21 @@
   }
   body:not(.home-page):not(.index-page) header h1 {
     margin: 0 auto;
+  }
+  body:not(.home-page):not(.index-page) main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: clamp(48px, 12vw, 80px) clamp(16px, 5vw, 24px) clamp(24px, 6vw, 32px) !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  body:not(.home-page):not(.index-page) main p,
+  body:not(.home-page):not(.index-page) main h2 {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   main {
     padding: clamp(48px, 12vw, 80px) clamp(16px, 4vw, 24px) clamp(24px, 6vw, 32px);

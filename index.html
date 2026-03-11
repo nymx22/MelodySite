@@ -9,43 +9,6 @@
     <link rel="stylesheet" href="./assets/css/mobile.css" />
     <style>
       body.index-page { overflow: auto; }
-      .projects-section {
-        padding: 48px 5% 80px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .projects-section h2 {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-bottom: 24px;
-        padding-left: 15%;
-      }
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 24px;
-      }
-      .project-card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-      }
-      .project-card img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        display: block;
-      }
-      .project-card span {
-        display: block;
-        margin-top: 8px;
-        font-size: 0.95rem;
-      }
-      @media (max-width: 768px) {
-        .projects-section { padding: 32px 5% 80px; }
-        .projects-section h2 { padding-left: 0; }
-        .projects-grid { grid-template-columns: 1fr; }
-      }
     </style>
 
     <script>
@@ -113,23 +76,5 @@
 
       <div class="nav-icon right">&#10095;</div>
     </div>
-
-    <section class="projects-section">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <a href="/always-aching-sometimes-mending" class="project-card">
-          <img src="./assets/images/2024/11/aasm-1.jpg" alt="Always aching, sometimes mending" />
-          <span>Always Aching, Sometimes Mending (2023)</span>
-        </a>
-        <a href="/nightmares" class="project-card">
-          <img src="./assets/images/2024/11/nightmares-1.jpg" alt="Nightmares" />
-          <span>Nightmares (2024)</span>
-        </a>
-        <a href="/aasm-gallery" class="project-card">
-          <img src="./assets/images/2024/11/nightmares-16.jpg" alt="Emerson Practicum Gallery" />
-          <span>Emerson Practicum Gallery (2024)</span>
-        </a>
-      </div>
-    </section>
   </body>
 </html>
