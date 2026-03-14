@@ -1,0 +1,7 @@
+{
+  "name": "melody-site",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

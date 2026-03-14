@@ -83,3 +83,80 @@ header h1 {
     margin-top: 5px; /* Spacing between the text and the line */
 }
 
+/* Desktop: per-image layout (mobile.css overrides for small viewports) */
+body.project2 .vertical-image_box img {
+    height: auto;
+}
+body.project2 .vertical-image_box img:nth-child(1) {
+    width: 70%;
+    margin-bottom: 6%;
+}
+body.project2 .vertical-image_box img:nth-child(2) {
+    width: 25%;
+    left: 23%;
+    position: relative;
+    margin-bottom: -5%;
+}
+body.project2 .vertical-image_box img:nth-child(3) {
+    width: 35%;
+    right: 18%;
+    position: relative;
+    margin-bottom: 6%;
+}
+body.project2 .vertical-image_box img:nth-child(4) {
+    width: 70%;
+    margin-bottom: 6%;
+}
+body.project2 .vertical-image_box img:nth-child(5) {
+    width: 55%;
+    margin-bottom: 12%;
+}
+body.project2 .vertical-image_box img:nth-child(6) {
+    width: 55%;
+    margin-bottom: 20%;
+}
+body.project2 .vertical-image_box img:nth-child(7) {
+    width: 30%;
+    margin-bottom: 14%;
+}
+body.project2 .vertical-image_box img:nth-child(8) {
+    width: 70%;
+    margin-bottom: 12%;
+}
+body.project2 .vertical-image_box img:nth-child(9) {
+    width: 55%;
+    margin-bottom: 12%;
+}
+body.project2 .vertical-image_box img:nth-child(10) {
+    width: 55%;
+    margin-bottom: 9%;
+}
+body.project2 .vertical-image_box img:nth-child(11) {
+    width: 70%;
+    margin-bottom: 7%;
+}
+body.project2 .vertical-image_box img:nth-child(12) {
+    width: 30%;
+    right: 10%;
+    position: relative;
+    margin-bottom: 7%;
+}
+body.project2 .vertical-image_box img:nth-child(13) {
+    width: 55%;
+    margin-bottom: 9%;
+}
+body.project2 .vertical-image_box img:nth-child(14) {
+    width: 70%;
+    margin-bottom: 9%;
+}
+body.project2 .vertical-image_box img:nth-child(15) {
+    width: 40%;
+    right: 10%;
+    position: relative;
+    margin-bottom: 12%;
+}
+body.project2 .vertical-image_box img:nth-child(16) {
+    width: 70%;
+    margin-bottom: 15%;
+}
+

@@ -73,6 +73,77 @@ header h1 {
     width: 100%; /* Maintains width consistency */
 }
 
+/* Desktop: per-image layout (mobile.css overrides for small viewports) */
+body.project1 .vertical-image_box img {
+    height: auto;
+}
+body.project1 .vertical-image_box img:nth-child(1) {
+    width: 35%;
+    right: 15%;
+    position: relative;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(2) {
+    width: 50%;
+    left: 7.5%;
+    position: relative;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(3) {
+    width: 65%;
+    margin-bottom: 12%;
+}
+body.project1 .vertical-image_box img:nth-child(4) {
+    width: 50%;
+    margin-bottom: 12%;
+}
+body.project1 .vertical-image_box img:nth-child(5) {
+    width: 65%;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(6) {
+    width: 40%;
+    right: 10%;
+    position: relative;
+    margin-bottom: 3%;
+}
+body.project1 .vertical-image_box img:nth-child(7) {
+    width: 40%;
+    left: 10%;
+    position: relative;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(8) {
+    width: 42%;
+    margin-bottom: 20%;
+}
+body.project1 .vertical-image_box img:nth-child(9) {
+    width: 65%;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(10) {
+    width: 37%;
+    left: 5%;
+    position: relative;
+    margin-bottom: 9%;
+}
+body.project1 .vertical-image_box img:nth-child(11) {
+    width: 55%;
+    margin-bottom: 12%;
+}
+body.project1 .vertical-image_box img:nth-child(12) {
+    width: 65%;
+    margin-bottom: 12%;
+}
+body.project1 .vertical-image_box img:nth-child(13) {
+    width: 50%;
+    margin-bottom: 25%;
+}
+body.project1 .vertical-image_box img:nth-child(14) {
+    width: 35%;
+    margin-bottom: 10%;
+}
+
 
 
 
