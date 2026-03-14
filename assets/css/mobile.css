@@ -618,20 +618,23 @@
   /* Project page headers - vertical + horizontal padding */
   body.project1 #custom-header-widget,
   body.project2 #custom-header-widget,
-  body.project3 #custom-header-widget {
+  body.project3 #custom-header-widget,
+  body.project4 .page-header {
     max-width: 100%;
     box-sizing: border-box;
     padding: clamp(0px, 2.5vw, 16px) clamp(12px, 4vw, 24px) clamp(8px, 2.5vw, 16px) clamp(8px, 3vw, 18px) !important;
   }
   body.project1 #custom-header-widget > div,
   body.project2 #custom-header-widget > div,
-  body.project3 #custom-header-widget > div {
+  body.project3 #custom-header-widget > div,
+  body.project4 .page-header > div {
     display: flex !important;
     align-items: center !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  #custom-header-widget {
+  #custom-header-widget,
+  body.project4 .page-header {
     padding-left: 5% !important;
     padding-right: 5% !important;
   }
@@ -641,15 +644,27 @@
   body.project2 #custom-header-widget a[href="/home"],
   body.project3 #custom-header-widget a[href="/pages/home/"],
   body.project1 #custom-header-widget a[href="/home/"],
-  body.project2 #custom-header-widget a[href="/home/"] {
+  body.project2 #custom-header-widget a[href="/home/"],
+  body.project4 .page-header a[href="/pages/home/"] {
     font-size: clamp(1rem, 4.5vw, 1.2rem) !important;
   }
   #custom-header-widget a[href="/home"],
   #custom-header-widget a[href="/home/"],
   #custom-header-widget a[href="/pages/home/"],
   #custom-header-widget a[href="/"],
-  #custom-header-widget a[href="/pages/"] {
+  #custom-header-widget a[href="/pages/"],
+  body.project4 .page-header .work-trigger,
+  body.project4 .page-header .menu-container > a[href*="about"] {
     font-size: clamp(0.95rem, 4vw, 1.2rem) !important;
+  }
+
+  /* Project4 header: same layout as project1, white text (dropdown list stays black) */
+  body.project4 .page-header a,
+  body.project4 .page-header .work-trigger {
+    color: #fff !important;
+  }
+  body.project4 .page-header .work-dropdown a {
+    color: #000 !important;
   }
 
   /* About / Contact pages: center content, full-width layout */
