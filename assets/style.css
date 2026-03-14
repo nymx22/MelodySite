@@ -272,6 +272,8 @@ header h1 {
 }
 .work-dropdown a {
   display: block;
+  width: 100%;
+  box-sizing: border-box;
   padding: 8px 16px;
   color: #000 !important;
   text-decoration: none;
@@ -284,6 +286,13 @@ header h1 {
 }
 .work-dropdown a:hover {
   background: rgba(0, 0, 0, 0.06);
+}
+
+/* Homepage work list: same as project header (override .nav-bar a) */
+.nav-bar .work-dropdown a {
+  padding: 8px 16px !important;
+  font-weight: normal !important;
+  color: #000 !important;
 }
 
 @media (max-width: 767px) {
