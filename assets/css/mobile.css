@@ -18,8 +18,17 @@
     width: 100%;
   }
   body.project1,
-  body.project2,
-  body.project3 {
+  body.project2 {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+    background-color: #fff !important;
+  }
+  body.project3,
+  body.project4 {
     overflow-x: hidden !important;
     max-width: 100% !important;
     width: 100% !important;
@@ -35,13 +44,15 @@
   /* Project image area - no side padding or margin */
   body.project1 .vertical-image_box,
   body.project2 .vertical-image_box,
-  body.project3 .project3-video-box {
+  body.project3 .project3-video-box,
+  body.project4 .video-container {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  body.project3 .project3-video-box video {
+  body.project3 .project3-video-box video,
+  body.project4 .video-container video {
     max-width: 100% !important;
     width: 100% !important;
     height: auto;
@@ -236,7 +247,13 @@
 /* Project pages: extend mobile layout to 991px (landscape phones, small tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
   body.project1,
-  body.project2,
+  body.project2 {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    background-color: #fff !important;
+  }
   body.project3 {
     overflow-x: hidden !important;
     max-width: 100% !important;
@@ -426,6 +443,7 @@
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
     justify-content: center;
+    align-items: center;
     gap: clamp(4px, 2vw, 8px);
     padding: clamp(8px, 2.5vw, 10px) 0;
   }
@@ -588,6 +606,9 @@
 
 @media (max-width: 767px) {
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: clamp(8px, 2.5vw, 16px) clamp(12px, 4vw, 24px);
     width: 100%;
     left: 0;
@@ -605,6 +626,8 @@
   body.project1 #custom-header-widget > div,
   body.project2 #custom-header-widget > div,
   body.project3 #custom-header-widget > div {
+    display: flex !important;
+    align-items: center !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }

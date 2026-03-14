@@ -156,15 +156,13 @@ header h1 {
 .nav-icon {
   position: absolute;
   font-size: 30px;
-  color: #fff;
+  color: #888;
   cursor: pointer;
   z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: -0.5px -0.5px 0 #888, 0.5px -0.5px 0 #888, -0.5px 0.5px 0 #888,
-    0.5px 0.5px 0 #888;
-  opacity: 0.5;
+  opacity: 0.8;
   transition: opacity 0.3s;
 }
 
@@ -245,3 +243,63 @@ header h1 {
   }
 }
 
+/* Work dropdown – hover to reveal project list */
+.work-dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.work-dropdown-wrap .work-trigger {
+  cursor: pointer;
+}
+.work-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  padding: 16px 0 12px 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease 1s, visibility 0s linear 1s;
+}
+.work-dropdown-wrap:hover .work-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease 0s, visibility 0s linear 0s;
+}
+.work-dropdown a {
+  display: block;
+  padding: 8px 16px;
+  color: #000 !important;
+  text-decoration: none;
+  font-weight: normal;
+  white-space: normal;
+  line-height: 1.4;
+}
+.work-dropdown a::after {
+  display: none !important;
+}
+.work-dropdown a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 767px) {
+  .work-dropdown {
+    max-width: calc(100vw - 32px);
+    min-width: 0;
+    word-wrap: break-word;
+  }
+  .work-dropdown a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Project headers: same dropdown style as homepage (no underline) */
+#custom-header-widget .work-dropdown-wrap {
+  display: flex;
+  align-items: center;
+}

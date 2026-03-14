@@ -6,154 +6,153 @@
     <title>A Happy Family</title>
 
     <link rel="stylesheet" href="../../assets/style.css" />
-    <link rel="stylesheet" href="../../assets/css/project3.css" />
+    <link rel="stylesheet" href="../../assets/css/project4.css" />
     <link rel="stylesheet" href="../../assets/css/mobile.css" />
   </head>
 
-  <body class="project3">
-    <div class="project3-header-zone">
-      <div id="custom-header-widget" class="project3-header">
-        <div class="project3-header-links">
-          <a href="/pages/home/">TianYun Chen</a>
-          <div>
-            <a href="/pages/">Work</a>
-            <a href="/pages/about/">About</a>
+  <body class="project4">
+    <header class="page-header" style="opacity: 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <a href="/pages/home/" style="margin: 0; font-size: 30px; font-weight: bold; color: white; text-decoration: none;">TianYun Chen</a>
+        <div class="menu-container">
+          <div class="work-dropdown-wrap">
+            <a href="/pages/" class="work-trigger" style="color: white; padding-right: 20px; text-decoration: none;">Work</a>
+            <div class="work-dropdown">
+              <a href="/pages/always-aching-sometimes-mending/">Always Aching, Sometimes Mending</a>
+              <a href="/pages/nightmares/">Nightmares</a>
+              <a href="/pages/homesick-on-my-own-soil/">Homesick on My Own Soil</a>
+              <a href="/pages/a-happy-family/">A Happy Family</a>
+            </div>
           </div>
+          <a href="/pages/about/" style="color: white; text-decoration: none;">About</a>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="project3-footer-zone">
-      <a href="#" id="ahf-statement-trigger" class="project3-statement">statement</a>
-    </div>
-
-    <div id="ahf-statement-panel" class="project3-statement-panel">
-      <button id="ahf-statement-close" class="project3-statement-close" aria-label="Close">↓</button>
-      <div class="project3-statement-content">
-        <p class="project3-statement-title">A happy family is but an earlier heaven</p>
-        <p class="project3-statement-year">2024</p>
-        <p>Looking at these moving images, you may understand where my obsession with lens-based media and archiving came from. Ever since I learned how to edit videos, I've been going back to these thousands of home videos created by my father with the attempt to make something meaningful out of them. There are no tears in the videos, only laughter and excitement. I wonder what had prompted the urgency in him to record every wholesome moment in our daily lives. Was he aware that time, happiness, and home are slipping away like sand through our fingers every time he pressed the recording button? When and why did he stop recording? Was life too harsh to be documented on camera by then?</p>
-        <p>These moments of happiness are long lost in my own memories. They are as surreal to me as Apollo 11 landing on the moon, only proven by footage. Underneath the nostalgic sentiments lies my questioning on the reliability of memories and visual archives. I created this montage as a complement to my photo book, Home: A Trilogy, as the missing pieces in the puzzle.</p>
+    <div class="video-container">
+      <video id="background-video" loop muted playsinline>
+        <source src="../../assets/video/a happy family (video).mp4" type="video/mp4" />
+      </video>
+      <div class="video-controls">
+        <button id="video-play-btn" aria-label="Play video"></button>
       </div>
     </div>
 
-    <div class="project3-video-box">
-      <video id="ahf-video" muted playsinline loop>
-        <source src="../../assets/video/a happy family (video).mp4" type="video/mp4" />
-      </video>
+    <div id="statement-link" onclick="toggleStatement()">Statement</div>
+    <div id="statement-box">
+      <p>
+        <strong>A happy family is but an earlier heaven (2024)</strong><br><br>
+        is a time-based media and an installation piece. The media itself consists of a 2' 24" length video and 6' 48" length audio playing on loop, originally displayed on an old television in gallery.<br><br>
+        Looking at these moving images, you may understand where my obsession with lens-based media and archiving came from. Ever since I learned how to edit videos, I've been going back to these thousands of home videos created by my father with the attempt to make something meaningful out of them. There are no tears in the videos, only laughter and excitement. I wonder what had prompted the urgency in him to record every wholesome moment in our daily lives. Was he aware that time, happiness, and home are slipping away like sand through our fingers every time he pressed the recording button? When and why did he stop recording? Was life too harsh to be documented on camera by then?<br><br>
+        These moments of happiness are long lost in my own memories. They are as surreal to me as Apollo 11 landing on the moon, only proven by footage. Underneath the nostalgic sentiments lies my questioning of the reliability of memories and visual archives. I created this montage as a complement to my photo book, <em>Home: A Trilogy</em>, as the missing pieces in the puzzle.
+      </p>
+    </div>
+
+    <div id="audio-modal" class="audio-modal">
+      <div class="audio-modal-inner">
+        <p>Please click to enable audio.</p>
+        <button id="play-audio">Play</button>
+      </div>
     </div>
 
     <audio id="ahf-audio" loop>
       <source src="../../assets/audio/a happy family (audio).mp3" type="audio/mpeg" />
     </audio>
 
-    <div id="ahf-audio-overlay" class="project3-audio-overlay">
-      <div class="project3-audio-popup">
-        <p>This piece includes sound. Would you like to enable audio?</p>
-        <button id="ahf-enable-audio">Enable audio</button>
-      </div>
-    </div>
-
-    <div id="ahf-play-overlay" class="project3-play-overlay" aria-hidden="true">
-      <button id="ahf-play-btn" class="project3-play-btn" aria-label="Play video">▶</button>
-    </div>
-
     <script>
       (function() {
-        var video = document.getElementById("ahf-video");
+        var video = document.getElementById("background-video");
         var audio = document.getElementById("ahf-audio");
-        var overlay = document.getElementById("ahf-audio-overlay");
-        var btn = document.getElementById("ahf-enable-audio");
-        var playOverlay = document.getElementById("ahf-play-overlay");
-        var playBtn = document.getElementById("ahf-play-btn");
+        var audioModal = document.getElementById("audio-modal");
+        var playAudioBtn = document.getElementById("play-audio");
+        var videoPlayBtn = document.getElementById("video-play-btn");
 
         function isMobileView() {
           return window.matchMedia("(max-width: 767px)").matches;
         }
 
         function startWithAudio() {
-          overlay.classList.add("hidden");
-          if (playOverlay) playOverlay.classList.add("hidden");
+          audioModal.style.display = "none";
+          if (videoPlayBtn) videoPlayBtn.parentElement.classList.add("hidden");
           video.muted = false;
           video.play().catch(function() {});
 
+          function setRandomAndPlay() {
+            seekAudioToRandom();
+            audio.play().catch(function() {});
+          }
+          if (audio.readyState >= 1 && audio.duration) {
+            setRandomAndPlay();
+          } else {
+            audio.addEventListener("loadedmetadata", setRandomAndPlay, { once: true });
+          }
+        }
+
+        playAudioBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          startWithAudio();
+        });
+
+        window.addEventListener("click", function(e) {
+          var t = e.target;
+          if (t === video || video.contains(t)) return;
+          if (t.closest("#statement-link") || t.closest("#statement-box") || t.closest("#play-audio") || t.closest(".audio-modal") || t.closest(".page-header") || t.closest(".work-dropdown")) return;
+          if (audio.paused) {
+            var d = audio.duration;
+            if (d && isFinite(d)) audio.currentTime = Math.random() * d;
+            audio.play().catch(function() {});
+          } else {
+            audio.pause();
+          }
+        }, { once: true });
+
+        function toggleStatement() {
+          var box = document.getElementById("statement-box");
+          box.classList.toggle("open");
+        }
+        window.toggleStatement = toggleStatement;
+
+        function seekAudioToRandom() {
           var d = audio.duration;
           if (d && isFinite(d)) {
             audio.currentTime = Math.random() * d;
-          } else {
-            audio.addEventListener("loadedmetadata", function setRandom() {
-              var dur = audio.duration;
-              if (dur && isFinite(dur)) {
-                audio.currentTime = Math.random() * dur;
-              }
-            }, { once: true });
-          }
-          audio.play().catch(function() {});
-        }
-
-        function enterFullscreenAndPlay() {
-          function doPlay() {
-            startWithAudio();
-            if (screen.orientation && screen.orientation.lock) {
-              screen.orientation.lock("landscape").catch(function() {});
-            }
-          }
-          function tryFullscreen() {
-            if (video.webkitEnterFullscreen) {
-              video.addEventListener("webkitbeginfullscreen", doPlay, { once: true });
-              video.webkitEnterFullscreen();
-            } else if (video.requestFullscreen) {
-              video.requestFullscreen().then(doPlay).catch(doPlay);
-            } else {
-              doPlay();
-            }
-          }
-          if (video.readyState >= 1) {
-            tryFullscreen();
-          } else {
-            video.addEventListener("loadedmetadata", tryFullscreen, { once: true });
           }
         }
 
-        btn.addEventListener("click", startWithAudio);
-        if (playBtn) {
-          playBtn.addEventListener("click", enterFullscreenAndPlay);
-        }
+        audio.addEventListener("loadedmetadata", seekAudioToRandom, { once: true });
 
         document.addEventListener("DOMContentLoaded", function() {
-          var mobile = isMobileView();
-          if (mobile) {
-            overlay.classList.add("hidden");
-            if (playOverlay) {
-              playOverlay.classList.remove("hidden");
-              playOverlay.setAttribute("aria-hidden", "false");
+          if (audio.readyState >= 1 && audio.duration) {
+            seekAudioToRandom();
+          }
+
+          var header = document.querySelector(".page-header");
+          if (header) {
+            header.style.transition = "opacity 0.5s ease";
+            setTimeout(function() {
+              header.style.opacity = "1";
+            }, 300);
+          }
+
+          if (isMobileView()) {
+            if (videoPlayBtn) {
+              videoPlayBtn.parentElement.classList.remove("hidden");
+              videoPlayBtn.addEventListener("click", function() {
+                startWithAudio();
+                if (video.webkitEnterFullscreen) {
+                  video.webkitEnterFullscreen();
+                } else if (video.requestFullscreen) {
+                  video.requestFullscreen().catch(function() {});
+                }
+              });
             }
           } else {
             video.play().catch(function() {});
-            audio.play().then(function() {
-              audio.pause();
-              startWithAudio();
-            }).catch(function() {});
           }
         });
 
-        window.addEventListener("resize", function() {
-          if (!isMobileView() && playOverlay) {
-            playOverlay.classList.add("hidden");
-          }
-        });
-
-        var statementTrigger = document.getElementById("ahf-statement-trigger");
-        var statementPanel = document.getElementById("ahf-statement-panel");
-        var statementClose = document.getElementById("ahf-statement-close");
-
-        statementTrigger.addEventListener("click", function(e) {
-          e.preventDefault();
-          statementPanel.classList.add("open");
-        });
-
-        statementClose.addEventListener("click", function() {
-          statementPanel.classList.remove("open");
+        document.getElementById("statement-box").addEventListener("click", function() {
+          this.classList.remove("open");
         });
       })();
     </script>

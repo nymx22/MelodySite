@@ -34,13 +34,30 @@
         padding: 10px 20px;
         transition: color 0.3s;
       }
-      .nav-bar a:not(:first-child):after {
+      .nav-bar .work-dropdown-wrap {
+        display: flex;
+        align-items: center;
+      }
+      .nav-bar a:not(:first-child),
+      .nav-bar .work-trigger {
+        position: relative;
+        display: inline-block;
+      }
+      .nav-bar a:not(:first-child)::after,
+      .nav-bar .work-trigger::after {
         content: "";
-        display: block;
-        margin-top: 2px;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 6px;
         height: 1.2px;
-        background-color: #000;
-        width: 100%;
+        background-color: #fff;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      .nav-bar a:not(:first-child):hover::after,
+      .nav-bar .work-trigger:hover::after {
+        opacity: 1;
       }
       .nav-bar a:hover {
         color: #000;
@@ -80,7 +97,14 @@
   <body class="home-page">
     <div class="nav-bar">
       <a href="/pages/home/">TianYun Chen</a>
-      <a href="/pages/">Work</a>
+      <div class="work-dropdown-wrap">
+        <a href="/pages/" class="work-trigger">Work</a>
+        <div class="work-dropdown">
+          <a href="/pages/always-aching-sometimes-mending/">Always Aching, Sometimes Mending</a>
+          <a href="/pages/nightmares/">Nightmares</a>
+          <a href="/pages/a-happy-family/">A Happy Family</a>
+        </div>
+      </div>
       <a href="/pages/about/">About</a>
     </div>
 

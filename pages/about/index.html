@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>About</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <title>TianYun Chen » about</title>
     <link rel="stylesheet" href="../../assets/style.css" />
     <link rel="stylesheet" href="../../assets/css/mobile.css" />
     <script src="../../assets/js/image_zoom.js" defer></script>
@@ -11,37 +12,55 @@
       body {
         overflow: auto;
       }
-      main {
+      .about-content {
         max-width: 900px;
         margin: 0 auto;
-        padding: 120px 24px 48px;
-        text-align: center;
+        padding: 48px 10% 80px;
+        font-family: "Siro-Regular", sans-serif;
+        line-height: 1.7;
       }
-      a {
+      .about-content p {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      .about-content a {
         color: inherit;
+        text-decoration: none;
+      }
+      .about-content a[href^="mailto"],
+      .about-content a[href*="CV"] {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body class="about-page">
-    <header>
-      <h1><a href="/pages/" style="text-decoration: none">TianYun Chen</a></h1>
-    </header>
-    <main>
-      <h2>About</h2>
+    <div id="custom-header-widget" style="position: relative; top: 0; left: 0; width: 100%; background: white; padding-bottom: 3%; padding-top: 3%;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding-left: 10%; padding-right: 10%;">
+        <a href="/pages/home/" style="margin: 0; font-size: 30px; font-weight: bold; color: black; text-decoration: none;">TianYun Chen</a>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div class="work-dropdown-wrap">
+            <a href="/pages/" class="work-trigger" style="color: black; padding-right: 20px; text-decoration: none;">Work</a>
+            <div class="work-dropdown">
+              <a href="/pages/always-aching-sometimes-mending/">Always Aching, Sometimes Mending</a>
+              <a href="/pages/nightmares/">Nightmares</a>
+              <a href="/pages/homesick-on-my-own-soil/">Homesick on My Own Soil</a>
+              <a href="/pages/a-happy-family/">A Happy Family</a>
+            </div>
+          </div>
+          <a href="/pages/about/" style="color: black; text-decoration: none;">About</a>
+        </div>
+      </div>
+      <h2 style="margin-top: 6%; font-size: 18px; padding-left: 10%; text-transform: uppercase;">about</h2>
+    </div>
+    <div class="about-content">
       <p>
-        Tianyun Chen (b.2002) is a multimedia artist and independent publisher at spec
-        collective in Brooklyn, NY. They graduated from Emerson College with a BFA degree
-        in Media Arts Production in 2025. Combining analog photography, book making,
-        archival footage, text, and various video-audio manipulation techniques, their work
-        often explores themes of identity, trauma, and interpersonal relationships. Lately
-        their art concerns topics of youth lifestyle and diasporic experiences.
-      </p>
-      <p>
+        Tianyun Chen is a multimedia artist and writer based in Boston/Shanghai, currently finishing their BFA in Media Arts Productions at Emerson College.<br><br>
+        Combining analog photography, archival VHS videos, digital and analog manipulations, installations, and text, their work contemplates the entwining nature of past memories, present and dreams, often exploring themes of identity, trauma, and interpersonal relationships with a touch of nostalgic quality.<br><br>
         <a href="mailto:melodychen2018@gmail.com">melodychen2018 [at] gmail.com</a>
       </p>
       <p>
         <a href="/assets/CV2026.pdf" target="_blank" rel="noreferrer">CV</a>
       </p>
-    </main>
+    </div>
   </body>
 </html>
