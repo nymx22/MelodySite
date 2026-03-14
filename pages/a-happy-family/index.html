@@ -71,21 +71,44 @@
           return window.matchMedia("(max-width: 767px)").matches;
         }
 
+        function setRandomAndPlay() {
+          seekAudioToRandom();
+          audio.play().catch(function() {});
+        }
+
         function startWithAudio() {
           audioModal.style.display = "none";
-          if (videoPlayBtn) videoPlayBtn.parentElement.classList.add("hidden");
-          video.muted = false;
-          video.play().catch(function() {});
-
-          function setRandomAndPlay() {
-            seekAudioToRandom();
-            audio.play().catch(function() {});
-          }
           if (audio.readyState >= 1 && audio.duration) {
             setRandomAndPlay();
           } else {
             audio.addEventListener("loadedmetadata", setRandomAndPlay, { once: true });
           }
+          if (!isMobileView()) {
+            if (videoPlayBtn) videoPlayBtn.parentElement.classList.add("hidden");
+            video.muted = false;
+            video.play().catch(function() {});
+          }
+        }
+
+        function enterFullscreenAndPlay() {
+          setRandomAndPlay();
+          video.muted = false;
+          video.play().catch(function() {});
+          if (video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
+            video.addEventListener("webkitbeginfullscreen", function() {
+              if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(function() {});
+              }
+            }, { once: true });
+          } else if (video.requestFullscreen) {
+            video.requestFullscreen().then(function() {
+              if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(function() {});
+              }
+            }).catch(function() {});
+          }
+          if (videoPlayBtn) videoPlayBtn.parentElement.classList.add("hidden");
         }
 
         playAudioBtn.addEventListener("click", function(e) {
@@ -139,11 +162,7 @@
               videoPlayBtn.parentElement.classList.remove("hidden");
               videoPlayBtn.addEventListener("click", function() {
                 startWithAudio();
-                if (video.webkitEnterFullscreen) {
-                  video.webkitEnterFullscreen();
-                } else if (video.requestFullscreen) {
-                  video.requestFullscreen().catch(function() {});
-                }
+                enterFullscreenAndPlay();
               });
             }
           } else {

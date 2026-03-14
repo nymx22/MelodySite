@@ -170,6 +170,17 @@ body.project4:hover #statement-link {
   #statement-box {
     z-index: 300;
     background: #000;
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #statement-box p {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    padding: 16px 5%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
