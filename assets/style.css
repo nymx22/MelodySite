@@ -39,6 +39,11 @@ body {
   font-family: "Siro-Regular", sans-serif;
 }
 
+body.index-page,
+body.about-page {
+  background: #fff;
+}
+
 /* Image zoom (lightbox) */
 img {
   cursor: zoom-in;

@@ -1,0 +1,279 @@
+/* A Happy Family - fullscreen video + separate audio */
+
+body.project3 {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #000;
+}
+
+.project3-video-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.project3-video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Audio permission popup */
+.project3-audio-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  font-family: "Siro-Regular", sans-serif;
+}
+
+.project3-audio-overlay.hidden {
+  display: none;
+}
+
+.project3-audio-popup {
+  text-align: center;
+  color: #fff;
+  padding: 2rem 3rem;
+  max-width: 400px;
+}
+
+.project3-audio-popup p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.project3-audio-popup button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 32px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+.project3-audio-popup button:hover {
+  background: #eee;
+}
+
+/* Header zone – invisible until hover over top area */
+.project3-header-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  min-height: 100px;
+}
+
+.project3-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3% 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-family: "Siro-Regular", sans-serif;
+}
+
+.project3-header-zone:hover .project3-header {
+  opacity: 1;
+}
+
+.project3-header-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.project3-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: color 0.3s;
+}
+
+.project3-header a:hover {
+  color: #000;
+}
+
+/* Footer – statement link, visible on hover */
+.project3-footer-zone {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  min-height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.project3-statement {
+  font-family: "Siro-Regular", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project3-footer-zone:hover .project3-statement {
+  opacity: 1;
+}
+
+.project3-statement:hover {
+  color: #000;
+}
+
+/* Statement panel – rolls out from bottom */
+.project3-statement-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: "Siro-Regular", sans-serif;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project3-statement-panel.open {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.project3-statement-close {
+  align-self: flex-end;
+  margin: 16px 24px 8px 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px;
+}
+
+.project3-statement-close:hover {
+  color: #ccc;
+}
+
+.project3-statement-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 24px 48px;
+  box-sizing: border-box;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.project3-statement-content p {
+  margin-bottom: 1rem;
+}
+
+.project3-statement-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.project3-statement-year {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Mobile play overlay – shown instead of autoplay */
+.project3-play-overlay {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .project3-play-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .project3-play-overlay.hidden {
+    display: none;
+  }
+  .project3-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    padding-left: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  .project3-play-btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Mobile: statement panel – full page, black, above header */
+@media (max-width: 767px) {
+  body.project3 .project3-statement-panel {
+    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    background: #000 !important;
+  }
+  body.project3 .project3-statement-panel.open {
+    max-height: 100vh;
+    height: 100%;
+  }
+}
+
+/* Mobile overrides */
+@media (max-width: 767px) {
+  body.project3 .project3-header a {
+    font-size: clamp(1rem, 4.5vw, 1.2rem) !important;
+  }
+  body.project3 .project3-header .project3-header-links > div a {
+    font-size: clamp(0.95rem, 4vw, 1.2rem) !important;
+  }
+  body.project3 .project3-video-box video {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: contain !important;
+  }
+}
