@@ -111,6 +111,12 @@
           if (videoPlayBtn) videoPlayBtn.parentElement.classList.add("hidden");
         }
 
+        function onFullscreenExit() {
+          if (isMobileView() && videoPlayBtn) {
+            videoPlayBtn.parentElement.classList.remove("hidden");
+          }
+        }
+
         playAudioBtn.addEventListener("click", function(e) {
           e.stopPropagation();
           startWithAudio();
@@ -165,6 +171,10 @@
                 enterFullscreenAndPlay();
               });
             }
+            video.addEventListener("webkitendfullscreen", onFullscreenExit);
+            document.addEventListener("fullscreenchange", function() {
+              if (!document.fullscreenElement) onFullscreenExit();
+            });
           } else {
             video.play().catch(function() {});
           }

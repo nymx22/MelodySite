@@ -172,15 +172,20 @@ body.project4:hover #statement-link {
     background: #000;
     max-height: 100vh;
     max-height: 100dvh;
+    max-height: -webkit-fill-available;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: env(safe-area-inset-bottom);
   }
   #statement-box p {
     font-size: 0.8125rem;
     line-height: 1.5;
     padding: 16px 5%;
+    padding-left: max(5%, env(safe-area-inset-left));
+    padding-right: max(5%, env(safe-area-inset-right));
     word-wrap: break-word;
     overflow-wrap: break-word;
+    -webkit-text-size-adjust: 100%;
   }
 }
 
